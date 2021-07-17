@@ -174,7 +174,7 @@ def multi(image):
 
 ######### START HERE ##########
 #guests=["Mum","Geo","Alf","Gab","Vee","Abe","All","Dav","Dyl","Sop"]
-guests=["Mum","Geo","Alf"]
+guests=["Geo","Alf"]
 f = open('MultiChoiceAnswers.csv', "w")
 f.truncate()
 f.close()
