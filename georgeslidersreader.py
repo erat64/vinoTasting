@@ -3,7 +3,7 @@ import numpy as np
 import csv
 # OPENING THE IMAGE
 #cap = cv2.VideoCapture(0) 
-frame=cv2.imread("sliders.png")
+frame=cv2.imread("test2.jpg")
 
 # FILTERING THE IMAGE
 # It converts the BGR color space of image to HSV color space 
