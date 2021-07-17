@@ -70,6 +70,17 @@ moments  = [cv2.moments(cnt) for cnt in contours0]
 reds = [( int(round(m['m10']/m['m00'])),int(round(m['m01']/m['m00'])) ) for m in moments]
 print('reds:', reds)
 
+answers=[]
+for i in reds:
+    answers.append(["a",i[1]])
+for i in blues:
+    answers.append(["b",i[1]])
+for i in greens:
+    answers.append(["c",i[1]])
+
+answers=sorted(answers, key=lambda x : x[1])
+answers=[i[0] for i in answers]
+print(answers)
 # DISPLAYING THE IMAGES FOR SOME SIDE BANTER THAT SVEN WOULDN'T GET
 cv2.imshow('frame', frame)
 cv2.imshow('red', maskred)

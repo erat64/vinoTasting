@@ -3,7 +3,7 @@ import numpy as np
 import csv
 # OPENING THE IMAGE
 #cap = cv2.VideoCapture(0) 
-frame=cv2.imread("test2.jpg")
+frame=cv2.imread("sliders.png")
 
 # FILTERING THE IMAGE
 # It converts the BGR color space of image to HSV color space 
@@ -73,18 +73,20 @@ def distance(x,y):
                 total+=(x[i]-y[i])**2
         return total**0.5
 
+for i in range(len(pairs)):
+    pairs[i]=sorted(pairs[i],key=lambda x: x[0])
+    
 # WORKING OUT THE SCORES
 scores=[]
 for i in pairs:
         output=[]
-        output.append(distance(i[0],i[2])/(distance(i[0],i[2])+distance(i[1],i[2])))
+        output.append(distance(i[0],i[1])/(distance(i[0],i[1])+distance(i[1],i[2])))
         output.append((i[0][1]+i[1][1]+i[2][1])/3)
         scores.append(output)
+scores=sorted(scores,key=lambda x: x[1])
+scores=[i[0] for i in scores]
 
-# WRITING THE TO CSV
-with open('answers.csv', 'w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerows(scores)#"""
+print(scores)
 
 # DISPLAYING THE IMAGES FOR SOME SIDE BANTER THAT SVEN WOULDN'T GET
 cv2.imshow('frame', frame)
