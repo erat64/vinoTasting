@@ -1,20 +1,20 @@
 import cv2
-<<<<<<< HEAD
-=======
-import numpy as np 
-# New
-print("What a sommelier!")
+import numpy as np
 
->>>>>>> 4bc4690839723a442e8635b95313c21d91e89a3a
-# OPENING THE IMAGE
-#cap = cv2.VideoCapture(0) 
-frame=cv2.imread("test2.jpg")
+img = cv2.imread('putting.jpg')
 
-# thresholds for filtering out the random colours
-lower_red1 = np.array([155, 30, 100])
-upper_red1 = np.array([180,255,255])
-lower_red2 = np.array([0, 30, 100])
-upper_red2 = np.array([25,255,255])
-lower_blue = np.array([90, 30, 50]) 
-upper_blue = np.array([140, 255, 255]) 
->>>>>>> 609f851d4cc0dd0ec8f716603091c96dd90fad29
+# Method 1: copy image and set other channels to black
+r = img.copy()
+r[:,:,0] = r[:,:,1] = 0
+
+g = img.copy()
+g[:,:,0] = g[:,:,2] = 0
+
+b = img.copy()
+b[:,:,1] = b[:,:,2] = 0
+
+cv2.imshow("red",r)
+cv2.imshow("green",g)
+cv2.imshow("blue",b)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
