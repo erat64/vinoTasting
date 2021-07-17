@@ -1,4 +1,11 @@
 import cv2
+<<<<<<< HEAD
+=======
+import numpy as np 
+# New
+print("What a sommelier!")
+
+>>>>>>> 4bc4690839723a442e8635b95313c21d91e89a3a
 # OPENING THE IMAGE
 #cap = cv2.VideoCapture(0) 
 frame=cv2.imread("test2.jpg")
