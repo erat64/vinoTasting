@@ -42,7 +42,7 @@ centriods, contours0, hierarchy = cv2.findContours( img.copy(), cv2.RETR_LIST, c
 moments  = [cv2.moments(cnt) for cnt in contours0]
 # Rounded the centroids to integer.
 centroids = [( int(round(m['m10']/m['m00'])),int(round(m['m01']/m['m00'])) ) for m in moments]
-print('centroids:', centroids)
+#print('centroids:', centroids)
 # draw circle to mark the centriod locations
 for c in centroids:
         cv2.circle(mask,c,5,(0,0,0))
@@ -53,7 +53,7 @@ centriods2, contours0, hierarchy = cv2.findContours( img.copy(), cv2.RETR_LIST, 
 moments  = [cv2.moments(cnt) for cnt in contours0]
 # Rounded the centroids to integer.
 centroids2 = [( int(round(m['m10']/m['m00'])),int(round(m['m01']/m['m00'])) ) for m in moments]
-print('centroids2:', centroids2)
+#print('centroids2:', centroids2)
 # draw circle to mark the centriod locations
 for c in centroids2:
         cv2.circle(mask2,c,5,(0,0,0))
@@ -89,9 +89,9 @@ scores=[i[0] for i in scores]
 print(scores)
 
 # DISPLAYING THE IMAGES FOR SOME SIDE BANTER THAT SVEN WOULDN'T GET
-cv2.imshow('frame', frame)
-cv2.imshow('mask', mask)
-cv2.imshow('mask2', mask2) 
+#cv2.imshow('frame', frame)
+#cv2.imshow('mask', mask)
+#cv2.imshow('mask2', mask2) 
 
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()

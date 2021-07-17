@@ -52,7 +52,7 @@ centriods, contours0, hierarchy = cv2.findContours( img.copy(), cv2.RETR_LIST, c
 moments  = [cv2.moments(cnt) for cnt in contours0]
 # Rounded the centroids to integer.
 blues = [( int(round(m['m10']/m['m00'])),int(round(m['m01']/m['m00'])) ) for m in moments]
-print('blues:', blues)
+#print('blues:', blues)
 # DETECTING THE CENTROIDS
 _,img = cv2.threshold(maskgreen,0,255,cv2.THRESH_OTSU)
 h, w = img.shape[:2]
@@ -60,7 +60,7 @@ centriods, contours0, hierarchy = cv2.findContours( img.copy(), cv2.RETR_LIST, c
 moments  = [cv2.moments(cnt) for cnt in contours0]
 # Rounded the centroids to integer.
 greens = [( int(round(m['m10']/m['m00'])),int(round(m['m01']/m['m00'])) ) for m in moments]
-print('greens:', greens)
+#print('greens:', greens)
 # DETECTING THE CENTROIDS
 _,img = cv2.threshold(maskred,0,255,cv2.THRESH_OTSU)
 h, w = img.shape[:2]
@@ -68,7 +68,7 @@ centriods, contours0, hierarchy = cv2.findContours( img.copy(), cv2.RETR_LIST, c
 moments  = [cv2.moments(cnt) for cnt in contours0]
 # Rounded the centroids to integer.
 reds = [( int(round(m['m10']/m['m00'])),int(round(m['m01']/m['m00'])) ) for m in moments]
-print('reds:', reds)
+#print('reds:', reds)
 
 answers=[]
 for i in reds:
@@ -82,10 +82,10 @@ answers=sorted(answers, key=lambda x : x[1])
 answers=[i[0] for i in answers]
 print(answers)
 # DISPLAYING THE IMAGES FOR SOME SIDE BANTER THAT SVEN WOULDN'T GET
-cv2.imshow('frame', frame)
-cv2.imshow('red', maskred)
-cv2.imshow('blue', maskblue)
-cv2.imshow('green', maskgreen) 
+#cv2.imshow('frame', frame)
+#cv2.imshow('red', maskred)
+#cv2.imshow('blue', maskblue)
+#cv2.imshow('green', maskgreen) 
 
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()
